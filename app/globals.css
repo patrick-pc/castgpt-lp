@@ -9,5 +9,6 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-rgb));
+  background-image: url("/sonoma-light.jpg");
+  @apply h-screen bg-cover bg-top;
 }

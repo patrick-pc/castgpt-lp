@@ -1,66 +1,110 @@
 import Image from "next/image";
-import NavBar from "./navbar/page";
+import NavBar from "@/components/navbar";
+import { Squirrel, HelpCircle } from "lucide-react";
 
 export default function Home() {
   return (
     <>
       <NavBar />
-      <main className="flex min-h-screen flex-col items-center justify-center gap-16 pb-32 p-6">
-        <section className="flex flex-col items-center justify-center gap-8 text-center">
-          <h1 className="text-7xl font-bold">CastGPT</h1>
-          <h2 className="text-4xl font-semibold">
-            Get instant access to ChatGPT with a single shortcut key.
-          </h2>
-          <p className="text-xl max-w-2xl text-zinc-400">
-            Write smarter, code faster and answer questions quicker with
-            CastGPT. Deeply integrated into macOS and just one keystroke away.
-          </p>
-          <button className="flex items-center justify-center gap-4 text-black bg-white rounded-lg font-medium text-lg py-3 px-4">
-            <svg
-              viewBox="0 0 22 27"
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="27"
-              className="relative top-[-2px]"
-            >
-              <path
-                d="M15.946 6.528c-.675 0-1.308.102-1.902.305-.593.203-1.128.409-1.605.618-.477.209-.895.313-1.256.313-.372 0-.788-.099-1.247-.296-.46-.197-.951-.392-1.474-.583a4.836 4.836 0 0 0-1.675-.287c-1.117 0-2.196.304-3.237.914C2.51 8.12 1.657 9.02.994 10.21S0 12.87 0 14.623c0 1.636.276 3.258.829 4.865.552 1.608 1.218 2.968 1.997 4.083.675.94 1.332 1.746 1.972 2.42C5.438 26.662 6.182 27 7.03 27c.558 0 1.044-.093 1.457-.279.413-.185.849-.37 1.308-.557.46-.185 1.032-.278 1.719-.278.71 0 1.273.09 1.692.27.419.18.826.36 1.221.54.396.18.902.27 1.518.27.919 0 1.707-.349 2.364-1.045a19.36 19.36 0 0 0 1.84-2.28c.652-.952 1.12-1.817 1.405-2.595.285-.777.433-1.19.445-1.236a77.33 77.33 0 0 1-.584-.313c-.367-.197-.786-.508-1.257-.931-.47-.424-.884-.984-1.238-1.68-.355-.696-.532-1.544-.532-2.542 0-.87.14-1.622.418-2.254.28-.633.605-1.155.977-1.567.372-.412.71-.725 1.012-.94a7.78 7.78 0 0 0 .506-.374c-.605-.87-1.276-1.494-2.015-1.871-.738-.378-1.416-.607-2.032-.688-.617-.081-1.053-.122-1.309-.122Zm-.96-2.21a6.773 6.773 0 0 0 1.03-1.75A5.321 5.321 0 0 0 16.417.54c0-.21-.017-.39-.052-.54-.675.023-1.384.226-2.129.61a5.92 5.92 0 0 0-1.849 1.444c-.384.43-.727.972-1.03 1.628a4.792 4.792 0 0 0-.453 2.028c0 .104.006.203.017.296.012.093.024.156.035.191.117.024.239.035.367.035.616 0 1.268-.183 1.954-.548a5.639 5.639 0 0 0 1.71-1.367Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-            Download for Mac
-          </button>
-          <p className="text-sm text-zinc-500">
-            One time payment. No in-app purchases.
-            <br />
-            Requires macOS 11 Big Sur or later.
-          </p>
+      <main className="w-full min-h-screen flex flex-col items-center justify-between pt-12 pb-4 px-4">
+        <section className="w-full flex items-start justify-between h-50">
+          <div className="flex items-start justify-start gap-4">
+            <Image
+              src="/sama.png"
+              alt="Sam Altman"
+              height={368}
+              width={368}
+              className="rounded-2xl"
+            />
+
+            <div className="h-48 w-48 bg-black/70 rounded-2xl flex flex-col gap-4 p-3">
+              <div className="flex items-center justify-between font-semibold">
+                <h2 className="text-yellow-600">Reminders</h2>
+                <p className="text-lg">2</p>
+              </div>
+
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full ring-1 ring-zinc-500 h-4 w-4"></div>
+                <p className="text-sm">Press Command + E</p>
+              </div>
+              <div className="flex items-center justify-start gap-4">
+                <div className="rounded-full ring-1 ring-zinc-500 h-4 w-4"></div>
+                <p className="text-sm">Get CastGPT</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-full max-w-96 h-48 flex flex-col items-start justify-start gap-4 bg-black/70 rounded-2xl">
+              <div className="w-full h-12 bg-white/10 rounded-t-2xl"></div>
+              <div className="w-full flex flex-col divide-y divide-white/10 px-4 text-sm">
+                <h1 className="py-3">
+                  With great workflow comes great productivy
+                </h1>
+                <h2 className="py-3">
+                  Get instant access to ChatGPT with a single shortcut key
+                </h2>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2">
+              <Image
+                src="/icon128x128.png"
+                alt="CastGPT Icon"
+                width={48}
+                height={48}
+              />
+              <p className="text-sm font-medium">Get CastGPT</p>
+            </div>
+          </div>
         </section>
 
-        <section className="w-full flex items-center justify-center">
-          <div className="w-full lg:w-[900px] h-[550px] bg-zinc-900 rounded-2xl border border-zinc-500">
-            <div className="w-full h-[40px] top-0 bg-black/90 rounded-t-2xl shadow flex items-center justify-between px-6">
-              <svg
-                viewBox="0 0 22 27"
-                xmlns="http://www.w3.org/2000/svg"
-                width="13"
-                height="18"
-                className="relative top-[-2px]"
-              >
-                <path
-                  d="M15.946 6.528c-.675 0-1.308.102-1.902.305-.593.203-1.128.409-1.605.618-.477.209-.895.313-1.256.313-.372 0-.788-.099-1.247-.296-.46-.197-.951-.392-1.474-.583a4.836 4.836 0 0 0-1.675-.287c-1.117 0-2.196.304-3.237.914C2.51 8.12 1.657 9.02.994 10.21S0 12.87 0 14.623c0 1.636.276 3.258.829 4.865.552 1.608 1.218 2.968 1.997 4.083.675.94 1.332 1.746 1.972 2.42C5.438 26.662 6.182 27 7.03 27c.558 0 1.044-.093 1.457-.279.413-.185.849-.37 1.308-.557.46-.185 1.032-.278 1.719-.278.71 0 1.273.09 1.692.27.419.18.826.36 1.221.54.396.18.902.27 1.518.27.919 0 1.707-.349 2.364-1.045a19.36 19.36 0 0 0 1.84-2.28c.652-.952 1.12-1.817 1.405-2.595.285-.777.433-1.19.445-1.236a77.33 77.33 0 0 1-.584-.313c-.367-.197-.786-.508-1.257-.931-.47-.424-.884-.984-1.238-1.68-.355-.696-.532-1.544-.532-2.542 0-.87.14-1.622.418-2.254.28-.633.605-1.155.977-1.567.372-.412.71-.725 1.012-.94a7.78 7.78 0 0 0 .506-.374c-.605-.87-1.276-1.494-2.015-1.871-.738-.378-1.416-.607-2.032-.688-.617-.081-1.053-.122-1.309-.122Zm-.96-2.21a6.773 6.773 0 0 0 1.03-1.75A5.321 5.321 0 0 0 16.417.54c0-.21-.017-.39-.052-.54-.675.023-1.384.226-2.129.61a5.92 5.92 0 0 0-1.849 1.444c-.384.43-.727.972-1.03 1.628a4.792 4.792 0 0 0-.453 2.028c0 .104.006.203.017.296.012.093.024.156.035.191.117.024.239.035.367.035.616 0 1.268-.183 1.954-.548a5.639 5.639 0 0 0 1.71-1.367Z"
-                  fill="white"
-                ></path>
-              </svg>
+        <section className="w-full flex items-center justify-between h-50">
+          <div className="w-full max-w-96 flex flex-col items-center justify-center gap-2 p-2 bg-black/70 rounded-2xl">
+            <div className="w-full flex gap-2">
+              <div className="h-20 w-full flex flex-col justify-between items-start bg-white/10 rounded-2xl p-2">
+                <span>
+                  <Squirrel color="white" size={20} />
+                </span>
+                <p className="text-sm">Updates</p>
+              </div>
+              <div className="h-20 w-full flex flex-col justify-between items-start bg-white/10 rounded-2xl p-2">
+                <span>
+                  <HelpCircle color="white" size={20} />
+                </span>
+                <p className="text-sm">Help</p>
+              </div>
+            </div>
 
-              <div className="flex items-center justify-center gap-3">
-                <Image
-                  src="/favicon.png"
-                  alt="CastGPT Icon"
-                  width={14}
-                  height={14}
-                />
-                <span className="text-xs">Sun 7 Jan 5:23PM</span>
+            <div className="w-full flex gap-2">
+              <div className="h-20 w-full flex flex-col justify-between items-start bg-white/10 rounded-2xl p-2">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                  </svg>
+                </span>
+                <p className="text-sm">Discord</p>
+              </div>
+              <div className="h-20 w-full flex flex-col justify-between items-start bg-white/10 rounded-2xl p-2">
+                <span>
+                  <svg
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-[18px]"
+                  >
+                    <path
+                      d="M14.94 2h2.715l-5.93 6.777L18.7 18h-5.462L8.96 12.407 4.065 18H1.35l6.342-7.25L1 2h5.6l3.868 5.113L14.94 2Zm-.952 14.375h1.504L5.784 3.54H4.17l9.818 12.836Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </span>
+                <p className="text-sm">Twitter</p>
               </div>
             </div>
           </div>
